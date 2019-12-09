@@ -2,6 +2,14 @@ package rentcar;
 
 public abstract class Car {
 
+    private final double CAR_DISTANCE_PER_LITER; // 연비
+    private double tripDistance; // 여행 거리
+
+    public Car(double distancePerLiter, double tripDistance) {
+        this.CAR_DISTANCE_PER_LITER = distancePerLiter;
+        this.tripDistance = tripDistance;
+    }
+
     /**
      * 리터당 이동 거리. 즉, 연비
      */
