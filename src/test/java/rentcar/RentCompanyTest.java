@@ -2,7 +2,7 @@ package rentcar;
 
 import org.junit.jupiter.api.Test;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static org.junit.Assert.assertThat;
 
 public class RentCompanyTest {
     private static final String NEWLINE = System.getProperty("line.separator");
@@ -10,22 +10,21 @@ public class RentCompanyTest {
     @Test
     public void report() throws Exception {
         RentCompany company = RentCompany.create(); // factory method를 사용해 생성
-
-//        구현하는 부분
-//        company.addCar(new Sonata(150));
-//        company.addCar(new K5(260));
-//        company.addCar(new Sonata(120));
-//        company.addCar(new Avante(300));
-//        company.addCar(new K5(390));
+        // 구현하는 부분
+        company.addCar(new Sonata(150));
+        company.addCar(new K5(260));
+        company.addCar(new Sonata(120));
+        company.addCar(new Avante(300));
+        company.addCar(new K5(390));
 
         String report = company.generateReport();
 
-        assertThat(report).isEqualTo(
-                "Sonata : 15리터" + NEWLINE +
-                "K5 : 20리터" + NEWLINE +
-                "Sonata : 12리터" + NEWLINE +
-                "Avante : 20리터" + NEWLINE +
-                "K5 : 30리터" + NEWLINE
-        );
+//        assertThat(report).isEqualTo(
+//                "Sonata : 15.0리터" + NEWLINE +
+//                "K5 : 20.0리터" + NEWLINE +
+//                "Sonata : 12.0리터" + NEWLINE +
+//                "Avante : 20.0리터" + NEWLINE +
+//                "K5 : 30.0리터" + NEWLINE
+//        );
     }
 }
